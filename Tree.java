@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
 class Node {
     int data;
     Node left;
@@ -65,6 +69,8 @@ class BinaryTree {
 public class Tree {
     public static void main(String[] args) {
         BinaryTree obj = new BinaryTree();
+        List<Integer> res = new ArrayList<Integer>();
+        
 
         obj.insert(10);
         obj.insert(5);
