@@ -24,7 +24,7 @@ public class BubbleSort {
 
         for( int n : arr)
         {
-            System.out.println(n);
+            System.out.println(n +"");
         }
 
         
