@@ -1,5 +1,6 @@
 
 public class Bookall {
+
     public static boolean isPossible(int[] arr, int n, int m, int mid) {
         int studentCount = 1;
         int pageSum = 0;
@@ -21,19 +22,17 @@ public class Bookall {
         return true;
     }
 
-  
-
     public static void main(String[] args) {
         int[] arr = {10, 20, 30, 40};
         int n = arr.length;
         int m = 2;
-        
+
         int sum = 0;
         for (int i = 0; i < n; i++) {
             sum += arr[i];
         }
 
-        int s = 0;  
+        int s = 0;
         int e = sum;
         int ans = -1;
         int mid = s + (e - s) / 2;
@@ -48,7 +47,7 @@ public class Bookall {
             mid = s + (e - s) / 2;
         }
 
-        System.out.println(""+mid);
+        System.out.println("" + ans);
 
     }
 }

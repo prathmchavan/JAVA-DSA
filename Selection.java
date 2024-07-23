@@ -17,12 +17,14 @@
                 }
                 int temp = arr[i];
                 arr[i] = arr[min];
-                arr[min] = temp;            }
+                arr[min] = temp;        
+            }
 
             for(int n : arr)
             {
                 System.out.println(n);
             }
+
         }
 
 
