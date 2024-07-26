@@ -1,28 +1,34 @@
-public class Testing {
 
-    // Recursive function to check if the array is sorted
-    public static boolean isSorted(int[] arr, int index , int target) {
-        // Base case: if we've reached the end of the array
-        if (index == arr.length - 1) {
-            return false;
+
+class Testing {
+    public static boolean check(int n)
+    {
+        // Handle negative numbers by converting to positive
+        if (n < 0) {
+            n = -n;
         }
 
-        // Check if the current element is greater than the next element
-        if (arr[index] == target) {
+        // Base case: If n becomes 0, it means it is divisible by 3
+        if (n == 0) {
             return true;
         }
 
-        // Recursive call to check the rest of the array
-        return isSorted(arr, index + 1 ,target);
+        // Base case: If n is less than 3 but not 0, it's not divisible by 3
+        if (n < 3) {
+            return false;
+        }
+
+        // Recursive case: Subtract 3 and check again
+        return check(n - 3);
+    }
+    public static void main(String[] args) {    
+
+        int val =27;
+        
+        boolean c = check(val);
+
+        System.out.println(c);
+
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
-
-        // Start checking from the first index (0)
-        boolean sorted = isSorted(arr, 0 ,12);
-
-        // Output the result
-        System.out.println("Is the arr? " + sorted);
-    }
 }

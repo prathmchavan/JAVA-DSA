@@ -66,7 +66,7 @@ class LinkedList {
 
         
     }
-
+   
     public void insertEnd(int data)
     {
 
@@ -109,6 +109,7 @@ public  class  Main{
         nums.add(30);
         nums.add(40);
         
+
         System.out.println("\n normal printing");
         nums.print();
         nums.inserFirst(90);
