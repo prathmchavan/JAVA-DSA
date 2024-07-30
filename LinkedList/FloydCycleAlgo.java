@@ -1,7 +1,3 @@
-
-
-
-
 class ListNode {
     int val;
     ListNode next;
@@ -12,28 +8,24 @@ class ListNode {
     }
 }
 
-public class Testing {
-    public boolean hasCycle(ListNode head)
-    {
-        if(head== null)
-        {
-            return true;
-            //we are considering that empty list is also circular in nature
+public class FloydCycleAlgo {
+
+    public boolean hasCycle(ListNode head) {
+        if (head == null) {
+            return false;
         }
 
-        ListNode fast = head;
         ListNode slow = head;
+        ListNode fast = head;
 
-        while(fast != null && fast.next != null)
-        {
-            fast = fast.next.next;
+        while (fast != null && fast.next != null) { // Corrected the condition
             slow = slow.next;
-
-            if(slow == fast)
-            {
-                return  true;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
             }
         }
+
         return false;
     }
 
@@ -52,7 +44,7 @@ public class Testing {
         node4.next = node5;
         node5.next = node3; // Creates the cycle
 
-        Testing cycleDetector = new Testing();
+        FloydCycleAlgo cycleDetector = new FloydCycleAlgo();
         boolean hasCycle = cycleDetector.hasCycle(node1);
         System.out.println("Cycle detected: " + hasCycle);
 
