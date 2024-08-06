@@ -76,7 +76,7 @@ class Ll {
     }
 }
 
-public class Testing {
+public class RemoveDuplicateUnsorted {
 
     public static void main(String[] args) {
 

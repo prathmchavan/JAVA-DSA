@@ -46,7 +46,7 @@ class Ll {
         }
     }
 
-    public void removeDuplicateUnsorted()
+    public void removeDuplicateSorted()
     {
         if(head == null)
         {
@@ -55,45 +55,41 @@ class Ll {
         else{
 
             Node current = head;
-            Node temp= head;
 
             while(current != null && current.next != null)
             {
-                while(temp != null && temp.next != null)
+                if( current.val == current.next.val)
                 {
-                    if(current.val == temp.next.val)
-                    {
-                        temp.next = temp.next.next;
-                    }
-                    else{
-                        temp = temp.next;
-                    }
+                    current = current.next.next;
+                    // current.next.next = null;
                 }
-                current = current.next;
-                temp = current;
+                else{
+
+                    current = current.next;
+                }
             }
         }
     }
 }
 
-public class Testing {
+public class RemoveDuplicateSorted {
 
     public static void main(String[] args) {
 
         Ll obj = new Ll();
 
         obj.insert(10);
-        obj.insert(20);
         obj.insert(10);
         obj.insert(20);
-        obj.insert(30);
         obj.insert(20);
+        obj.insert(20);
+        obj.insert(30);
         obj.insert(30);
         obj.insert(250);
         
         obj.print();
 
-        obj.removeDuplicateUnsorted();
+        obj.removeDuplicateSorted();
 
 
         System.out.println("");
